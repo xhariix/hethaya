@@ -363,14 +363,15 @@ const Hero = () => {
   const ripple2Scale = useTransform(scrollYProgress, [0.44, 0.7], [0, 6]);
   const ripple2Opacity = useTransform(scrollYProgress, [0.44, 0.55, 0.7], [0, 0.4, 0]);
 
-  // Products emerge from splash center
-  const productsOpacity = useTransform(scrollYProgress, [0.48, 0.65], [0, 1]);
-  const productsScale = useTransform(scrollYProgress, [0.48, 0.68], [0.3, 1]);
-  const productsY = useTransform(scrollYProgress, [0.48, 0.72], ['15vh', '0vh']);
+  // Products emerge from splash center — stretched to finish near the end of
+  // the scroll so there's no dead/static space before the next section.
+  const productsOpacity = useTransform(scrollYProgress, [0.48, 0.72], [0, 1]);
+  const productsScale = useTransform(scrollYProgress, [0.48, 0.85], [0.3, 1]);
+  const productsY = useTransform(scrollYProgress, [0.48, 0.95], ['15vh', '0vh']);
 
   // Headline fades slightly when products arrive
   const headlineOpacity = useTransform(scrollYProgress, [0, 0.4, 0.55], [1, 1, 0.35]);
-  const subheadOpacity = useTransform(scrollYProgress, [0.55, 0.7], [0, 1]);
+  const subheadOpacity = useTransform(scrollYProgress, [0.66, 0.92], [0, 1]);
 
   // Small droplets during splash
   const dropletY = useTransform(scrollYProgress, [0.38, 0.55], [0, -80]);
@@ -387,7 +388,7 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={heroRef} style={{ position: 'relative', height: '280vh' }}>
+    <section ref={heroRef} style={{ position: 'relative', height: '230vh' }}>
       <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', background: '#EDE6D3' }}>
         {/* Ambient background */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>

@@ -7,7 +7,10 @@
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) contains horizontal overflow WITHOUT creating a
+     scroll container — `hidden` here would break `position: sticky` (the
+     scroll-driven hero animation). */
+  overflow-x: clip;
 }
 
 body {
