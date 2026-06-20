@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF5EA;
+  --foreground: #0D1427;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Instrument Sans', system-ui, Arial, Helvetica, sans-serif;
+}
+
+img { max-width: 100%; }
+
+/* ───────────────────────────────────────────────
+   Responsive navbar (SiteNav)
+   ─────────────────────────────────────────────── */
+.site-nav-burger { display: none; }
+
+@media (max-width: 860px) {
+  .site-nav { padding-left: 16px !important; padding-right: 16px !important; }
+  .site-nav-links { display: none !important; }
+  .site-nav-order { display: none !important; }
+  .site-nav-burger { display: flex !important; }
+}
+
+/* ───────────────────────────────────────────────
+   Mobile layout: stack multi-column grids,
+   shrink oversized side padding. Targets the inline
+   styles used throughout the site.
+   ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  /* Fixed multi-column grids → single column */
+  [style*="repeat(2,"],
+  [style*="repeat(3,"],
+  [style*="repeat(4,"],
+  [style*="repeat(5,"],
+  [style*="repeat(7,"],
+  [style*="1fr 1fr"],
+  [style*="1.15fr"],
+  [style*="1.5fr"],
+  [style*="1fr 360px"],
+  [style*="1fr 420px"],
+  [style*="1fr 2fr"],
+  [style*="2fr 1fr"],
+  [style*="140px 180px"],
+  [style*="1fr auto"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Oversized horizontal section padding → comfortable mobile gutters */
+  [style*="px 80px"] { padding-left: 18px !important; padding-right: 18px !important; }
+  [style*="px 48px"] { padding-left: 16px !important; padding-right: 16px !important; }
+  [style*="px 64px"] { padding-left: 18px !important; padding-right: 18px !important; }
 }

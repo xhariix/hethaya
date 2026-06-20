@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Menu, User, Check, Calendar, Truck, Leaf, ArrowRight, Star, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from './SiteNav';
 
 // ═══════════════════════════════════════════════════════════════════
 // BRAND SYSTEM — colors pulled directly from the Hetheya logo
@@ -1459,7 +1460,7 @@ export default function HetheyaLanding() {
         * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
       `}</style>
       
-      <Navbar />
+      <SiteNav overlay />
       <Hero />
       <Features />
       <DailyEssentials />

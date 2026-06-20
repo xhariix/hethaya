@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -131,7 +132,7 @@ export default function AboutPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/about" />
+      <SiteNav active="/about" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(135deg, ${BRAND.blue} 0%, ${BRAND.blueDeep} 100%)`, padding: '80px 48px 64px', color: 'white' }}>

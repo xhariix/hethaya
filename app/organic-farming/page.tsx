@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -125,7 +126,7 @@ export default function OrganicFarmingPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/organic-farming" />
+      <SiteNav active="/organic-farming" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(160deg, ${BRAND.green} 0%, #0F3D1A 100%)`, padding: '80px 48px 64px', color: 'white' }}>

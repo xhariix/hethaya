@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -157,7 +158,7 @@ export default function WhyOotyPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/why-ooty" />
+      <SiteNav active="/why-ooty" />
 
       {/* Hero */}
       <section style={{

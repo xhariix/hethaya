@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ArrowRight, Filter, Star, Leaf, Check, X } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -297,7 +298,7 @@ export default function ProductsPage() {
         ::-webkit-scrollbar { width: 0; }
       `}</style>
 
-      <Navbar />
+      <SiteNav active="/products" />
 
       {/* Hero Banner */}
       <section style={{

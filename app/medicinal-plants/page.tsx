@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ShoppingBag, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -163,7 +164,7 @@ export default function MedicinalPlantsPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/medicinal-plants" />
+      <SiteNav active="/medicinal-plants" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(160deg, #2D5A1E 0%, #153010 100%)`, padding: '80px 48px 64px', color: 'white' }}>

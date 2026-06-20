@@ -39,6 +39,10 @@ yarn-error.log*
 # claude code (local settings & worktrees)
 .claude
 
+# design source files (not used by the build; website uses public/logo.png)
+*.cdr
+/Hethay logo & letter pad.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

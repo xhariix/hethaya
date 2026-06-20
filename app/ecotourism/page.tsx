@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag, Check, Star, Calendar, Users, Clock } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -212,7 +213,7 @@ export default function EcotourismPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/ecotourism" />
+      <SiteNav active="/ecotourism" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(160deg, #1B4A2E 0%, #0C2415 100%)`, padding: '80px 48px 64px', color: 'white' }}>

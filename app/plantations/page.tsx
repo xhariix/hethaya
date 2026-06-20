@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -163,7 +164,7 @@ export default function PlantationsPage() {
         * { -webkit-font-smoothing: antialiased; }
       `}</style>
 
-      <Navbar active="/plantations" />
+      <SiteNav active="/plantations" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(160deg, #5C3D1E 0%, #2A1A0D 100%)`, padding: '80px 48px 64px', color: 'white' }}>

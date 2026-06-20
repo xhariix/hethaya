@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag, Check, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Link from 'next/link';
+import SiteNav from '../SiteNav';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -102,7 +103,7 @@ export default function ContactPage() {
         select { appearance: none; }
       `}</style>
 
-      <Navbar active="/contact" />
+      <SiteNav active="/contact" />
 
       {/* Hero */}
       <section style={{ background: `linear-gradient(135deg, ${BRAND.ink} 0%, #1A2240 100%)`, padding: '72px 48px 56px', color: 'white' }}>
