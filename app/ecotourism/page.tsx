@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag, Check, Star, Calendar, Users, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -38,20 +39,20 @@ const HetheyaLogo = ({ height = 44 }: { height?: number }) => (
 
 const Navbar = ({ active }: { active: string }) => (
   <nav style={{ position: 'sticky', top: 0, zIndex: 50, padding: '14px 48px', background: 'rgba(250, 245, 234, 0.96)', backdropFilter: 'blur(16px)', borderBottom: `1px solid ${BRAND.creamDeep}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-    <a href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></a>
+    <Link href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></Link>
     <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
       {NAV_LINKS.map((item) => (
-        <a key={item.label} href={item.href} style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: item.href === active ? 600 : 500, color: item.href === active ? BRAND.pink : BRAND.ink, textDecoration: 'none', transition: 'color 0.2s' }}
+        <Link key={item.label} href={item.href} style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: item.href === active ? 600 : 500, color: item.href === active ? BRAND.pink : BRAND.ink, textDecoration: 'none', transition: 'color 0.2s' }}
           onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = BRAND.pink}
           onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = item.href === active ? BRAND.pink : BRAND.ink}
-        >{item.label}</a>
+        >{item.label}</Link>
       ))}
     </div>
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <a href="/contact" style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, color: BRAND.blue, border: `1px solid ${BRAND.blue}`, padding: '9px 18px', borderRadius: 999, textDecoration: 'none' }}
+      <Link href="/contact" style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, color: BRAND.blue, border: `1px solid ${BRAND.blue}`, padding: '9px 18px', borderRadius: 999, textDecoration: 'none' }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = BRAND.blue; (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = BRAND.blue; }}
-      >Book a Visit</a>
+      >Book a Visit</Link>
       <button style={{ background: BRAND.blue, color: 'white', border: 'none', width: 42, height: 42, borderRadius: 999, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><ShoppingBag size={17} /></button>
     </div>
   </nav>
@@ -328,22 +329,22 @@ export default function EcotourismPage() {
                 📅 <strong>Schedule:</strong> {current.schedule}
               </div>
 
-              <a href="/contact" style={{
+              <Link href="/contact" style={{
                 display: 'block', textAlign: 'center', padding: '16px 24px',
                 background: current.color, color: 'white', borderRadius: 999,
                 fontFamily: "'Instrument Sans', sans-serif", fontSize: 15, fontWeight: 600,
                 textDecoration: 'none', marginBottom: 12,
               }}>
                 Book This Experience <ArrowRight size={15} style={{ display: 'inline', marginLeft: 6 }} />
-              </a>
-              <a href="/contact" style={{
+              </Link>
+              <Link href="/contact" style={{
                 display: 'block', textAlign: 'center', padding: '14px 24px',
                 background: 'transparent', color: BRAND.ink, borderRadius: 999,
                 fontFamily: "'Instrument Sans', sans-serif", fontSize: 14,
                 textDecoration: 'none', border: `1px solid ${BRAND.creamDeep}`,
               }}>
                 Ask a Question
-              </a>
+              </Link>
 
               <div style={{ marginTop: 24, paddingTop: 20, borderTop: `1px solid ${BRAND.creamDeep}` }}>
                 <div style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 12, color: BRAND.inkFaint, marginBottom: 8 }}>Also available:</div>
@@ -426,9 +427,9 @@ export default function EcotourismPage() {
         <p style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 16, opacity: 0.75, marginBottom: 36 }}>
           Tell us your group size, preferred dates, and the experience you're interested in. We'll build your Hetheya day.
         </p>
-        <a href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: BRAND.pink, color: 'white', padding: '18px 36px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 15, fontWeight: 600, textDecoration: 'none' }}>
+        <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: BRAND.pink, color: 'white', padding: '18px 36px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 15, fontWeight: 600, textDecoration: 'none' }}>
           Book Your Visit <ArrowRight size={16} />
-        </a>
+        </Link>
       </section>
     </div>
   );

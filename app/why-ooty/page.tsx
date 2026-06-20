@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -44,10 +45,10 @@ const Navbar = ({ active }: { active: string }) => (
     borderBottom: `1px solid ${BRAND.creamDeep}`,
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
   }}>
-    <a href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></a>
+    <Link href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></Link>
     <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
       {NAV_LINKS.map((item) => (
-        <a key={item.label} href={item.href} style={{
+        <Link key={item.label} href={item.href} style={{
           fontFamily: "'Instrument Sans', sans-serif",
           fontSize: 13, fontWeight: item.href === active ? 600 : 500,
           color: item.href === active ? BRAND.pink : BRAND.ink,
@@ -55,18 +56,18 @@ const Navbar = ({ active }: { active: string }) => (
         }}
         onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = BRAND.pink}
         onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = item.href === active ? BRAND.pink : BRAND.ink}
-        >{item.label}</a>
+        >{item.label}</Link>
       ))}
     </div>
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <a href="/contact" style={{
+      <Link href="/contact" style={{
         fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: 500,
         color: BRAND.blue, border: `1px solid ${BRAND.blue}`,
         padding: '9px 18px', borderRadius: 999, textDecoration: 'none', transition: 'all 0.2s',
       }}
       onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = BRAND.blue; (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
       onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = BRAND.blue; }}
-      >Order Now</a>
+      >Order Now</Link>
       <button style={{
         background: BRAND.blue, color: 'white', border: 'none',
         width: 42, height: 42, borderRadius: 999, cursor: 'pointer',
@@ -318,12 +319,12 @@ export default function WhyOotyPage() {
           Start a subscription and receive fresh Nilgiri dairy at your door before 7 AM.
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: BRAND.pink, color: 'white', padding: '16px 32px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
+          <Link href="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: BRAND.pink, color: 'white', padding: '16px 32px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
             Shop Products <ArrowRight size={15} />
-          </a>
-          <a href="/ecotourism" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: 'white', padding: '16px 32px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 14, fontWeight: 500, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.4)' }}>
+          </Link>
+          <Link href="/ecotourism" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: 'white', padding: '16px 32px', borderRadius: 999, fontFamily: "'Instrument Sans', sans-serif", fontSize: 14, fontWeight: 500, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.4)' }}>
             Visit the Farm <ArrowRight size={15} />
-          </a>
+          </Link>
         </div>
       </section>
     </div>

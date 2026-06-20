@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Menu, User, Check, Calendar, Truck, Leaf, ArrowRight, Star, X, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 
 // ═══════════════════════════════════════════════════════════════════
 // BRAND SYSTEM — colors pulled directly from the Hetheya logo
@@ -287,12 +288,12 @@ const Navbar = () => {
       transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     }}>
-      <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <HetheyaLogo height={scrolled ? 40 : 46} />
-      </a>
+      </Link>
       <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
         {NAV_LINKS.map((item) => (
-          <a key={item.label} href={item.href} style={{
+          <Link key={item.label} href={item.href} style={{
             fontFamily: "'Instrument Sans', sans-serif",
             fontSize: 13, fontWeight: 500, color: BRAND.ink,
             letterSpacing: '0.02em', textDecoration: 'none',
@@ -300,11 +301,11 @@ const Navbar = () => {
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = BRAND.pink}
           onMouseLeave={(e) => e.currentTarget.style.color = BRAND.ink}
-          >{item.label}</a>
+          >{item.label}</Link>
         ))}
       </div>
       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-        <a href="/contact" style={{
+        <Link href="/contact" style={{
           fontFamily: "'Instrument Sans', sans-serif",
           fontSize: 13, fontWeight: 500, color: BRAND.blue,
           background: 'transparent', border: `1px solid ${BRAND.blue}`,
@@ -314,7 +315,7 @@ const Navbar = () => {
         }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = BRAND.blue; (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = BRAND.blue; }}
-        >Order Now</a>
+        >Order Now</Link>
         <button style={{
           background: BRAND.blue, color: 'white', border: 'none',
           width: 42, height: 42, borderRadius: 999, cursor: 'pointer',

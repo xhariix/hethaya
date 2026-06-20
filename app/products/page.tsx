@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ArrowRight, Filter, Star, Leaf, Check, X } from 'lucide-react';
+import Link from 'next/link';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -46,12 +47,12 @@ const Navbar = () => {
       borderBottom: `1px solid ${BRAND.creamDeep}`,
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     }}>
-      <a href="/" style={{ textDecoration: 'none' }}>
+      <Link href="/" style={{ textDecoration: 'none' }}>
         <HetheyaLogo height={40} />
-      </a>
+      </Link>
       <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
         {NAV_LINKS.map((item) => (
-          <a key={item.label} href={item.href} style={{
+          <Link key={item.label} href={item.href} style={{
             fontFamily: "'Instrument Sans', sans-serif",
             fontSize: 13, fontWeight: item.href === '/products' ? 600 : 500,
             color: item.href === '/products' ? BRAND.pink : BRAND.ink,
@@ -59,11 +60,11 @@ const Navbar = () => {
           }}
           onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = BRAND.pink}
           onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = item.href === '/products' ? BRAND.pink : BRAND.ink}
-          >{item.label}</a>
+          >{item.label}</Link>
         ))}
       </div>
       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-        <a href="/contact" style={{
+        <Link href="/contact" style={{
           fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: 500,
           color: BRAND.blue, border: `1px solid ${BRAND.blue}`,
           padding: '9px 18px', borderRadius: 999, textDecoration: 'none',
@@ -71,7 +72,7 @@ const Navbar = () => {
         }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = BRAND.blue; (e.currentTarget as HTMLAnchorElement).style.color = 'white'; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = BRAND.blue; }}
-        >Order Now</a>
+        >Order Now</Link>
         <button style={{
           background: BRAND.blue, color: 'white', border: 'none',
           width: 42, height: 42, borderRadius: 999, cursor: 'pointer',
@@ -418,14 +419,14 @@ export default function ProductsPage() {
         <p style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 16, opacity: 0.75, marginBottom: 32 }}>
           Set your weekly delivery schedule once. Edit any day's order till midnight.
         </p>
-        <a href="/contact" style={{
+        <Link href="/contact" style={{
           display: 'inline-flex', alignItems: 'center', gap: 10,
           background: BRAND.pink, color: 'white', padding: '18px 36px', borderRadius: 999,
           fontFamily: "'Instrument Sans', sans-serif", fontSize: 15, fontWeight: 600,
           textDecoration: 'none',
         }}>
           Build my subscription <ArrowRight size={16} />
-        </a>
+        </Link>
       </section>
     </div>
   );

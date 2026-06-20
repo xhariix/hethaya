@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag, Check, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 const BRAND = {
   cream: '#FAF5EA', creamDeep: '#F2EBD6', creamSoft: '#FDFAF3',
@@ -37,13 +38,13 @@ const HetheyaLogo = ({ height = 44 }: { height?: number }) => (
 
 const Navbar = ({ active }: { active: string }) => (
   <nav style={{ position: 'sticky', top: 0, zIndex: 50, padding: '14px 48px', background: 'rgba(250, 245, 234, 0.96)', backdropFilter: 'blur(16px)', borderBottom: `1px solid ${BRAND.creamDeep}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-    <a href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></a>
+    <Link href="/" style={{ textDecoration: 'none' }}><HetheyaLogo height={40} /></Link>
     <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
       {NAV_LINKS.map((item) => (
-        <a key={item.label} href={item.href} style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: item.href === active ? 600 : 500, color: item.href === active ? BRAND.pink : BRAND.ink, textDecoration: 'none', transition: 'color 0.2s' }}
+        <Link key={item.label} href={item.href} style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 13, fontWeight: item.href === active ? 600 : 500, color: item.href === active ? BRAND.pink : BRAND.ink, textDecoration: 'none', transition: 'color 0.2s' }}
           onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = BRAND.pink}
           onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = item.href === active ? BRAND.pink : BRAND.ink}
-        >{item.label}</a>
+        >{item.label}</Link>
       ))}
     </div>
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
@@ -138,7 +139,7 @@ export default function ContactPage() {
                 We'll get back to {form.name.split(' ')[0] || 'you'} within 4 hours. Check your inbox at {form.email}.
               </p>
               <div style={{ fontFamily: "'Instrument Sans', sans-serif", fontSize: 14, color: BRAND.inkFaint }}>
-                Meanwhile — <a href="/products" style={{ color: BRAND.blue }}>browse our full product range →</a>
+                Meanwhile — <Link href="/products" style={{ color: BRAND.blue }}>browse our full product range →</Link>
               </div>
             </motion.div>
           ) : (
